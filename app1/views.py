@@ -32,5 +32,39 @@ def voucher(request):
 def vouchpage(request):
     return render(request, 'vouchpage.html')
 
+# stocks
+
+def liststockviews(request):
+    return render(request, 'stock/liststock.html')
+
+def liststockgroupviews(request):
+    return render(request, 'stock/liststockgroup.html')
+
+def singlestockgroupanalysisview(request):
+    return render(request, 'stock/singlestockgroupanalysis.html')
+
+def querystockview(request):
+    return render(request, 'stock/querystocks.html')
+
+def purchasevoucheranalysisview(request):
+    return render(request, 'stock/purchasevoucheranalysis.html')
+
+def salevoucheranalysisview(request):
+    return render(request, 'stock/salevoucheranalysis.html')
+    
+def itemmovementanalysisview(request):
+    return render(request, 'stock/itemmovementanalysis.html')
+
+def stockgroupanalysisview(request):
+    return render(request, 'stock/stockgroupanalysis.html')
+
+def stockgroupcreateview(request):
+    return render(request, 'stock/stockgroupcreation.html')
+
+def stockitmecreateview(request):
+    return render(request, 'stock/stockitemcreation.html')
+
+
+
 
 

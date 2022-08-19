@@ -14,9 +14,15 @@ urlpatterns = [
     path('costcentr',views.costcentr,name='costcentr'),
     path('voucher',views.voucher,name='voucher'),
     path('vouchpage',views.vouchpage,name='vouchpage'),
-
-
-
-
+    path('liststockviews',views.liststockviews,name='liststockviews'),
+    path('liststockgroupviews',views.liststockgroupviews,name='liststockgroupviews'),
+    path('singlestockgroupanalysisview',views.singlestockgroupanalysisview,name='singlestockgroupanalysisview'),
+    path('querystockview',views.querystockview,name='querystockview'),
+    path('salevoucheranalysisview',views.salevoucheranalysisview,name='salevoucheranalysisview'),
+    path('purchasevoucheranalysisview',views.purchasevoucheranalysisview,name='purchasevoucheranalysisview'),
+    path('itemmovementanalysisview',views.itemmovementanalysisview,name='itemmovementanalysisview'),
+    path('stockgroupanalysisview',views.stockgroupanalysisview,name='stockgroupanalysisview'),
+    path('stockgroupcreateview',views.stockgroupcreateview,name='stockgroupcreateview'),
+    path('stockitmecreateview',views.stockitmecreateview,name='stockitmecreateview'),
     
 ]
