@@ -23,47 +23,79 @@
               <div class="main-panel">
                   <div class="content-wrapper">
                       <div class="row d-flex ms-0" style="background-color: rgb(103, 175, 220);color:#fff;width: 100%;">
-                          <div class="col">Voucher Analysis</div>
+                          <div class="col">Item movement Analysis</div>
                           <!-- <div class="col"><a href="" class="float-end"><button class="btn-close"></button></a></div> -->
                       </div>
                       <div class="table-responsive">
                           <table class="table table-bordered table-sm border-dark" style="background-color: rgba(33,57,77,255);color:#fff;">
                               <tr>
                                 <td rowspan="3"  class="align-middle">Particular</td>
-                                <td colspan="4" class="text-center"><h5>ABC PVT.LTD</h5>For 1-Apr-2022</td>
+                                <td colspan="4" class="text-center"><h5>item name</h5>For 1-Apr-2022</td>
                               </tr>
                               <tr>
                                 <td colspan="4" class="text-center">Closing Balance</td>
                               </tr>
                               <tr>
                                 <td class="text-center">Quantity</td>
+                                <td class="text-center">Basic Rate</td>
                                 <td class="text-center">Eff.Rate</td>
                                 <td class="text-center">Value</td>
-                                <td class="text-center">Quantity</td>
+                                
                               </tr>
                               <tbody>
                                   <tr>
-                                      <td>Acer</td>
-                                      <td>15</td>
-                                      <td>12</td>
-                                      <td>1140</td>
-                                      <td>456</td>
+                                      <td><u>Movement Inward</u></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
                                   </tr>
                                   <tr>
-                                      <td>Acer</td>
-                                      <td>15</td>
-                                      <td>12</td>
-                                      <td>1140</td>
-                                      <td>7856</td>
-                                  </tr>
-                                  <tr>
-                                      <td>Acer</td>
-                                      <td>275</td>
-                                      <td>287</td>
-                                      <td>7815</td>
-                                      <td>15</td>
-                                  </tr>
-                                  
+                                    <td><u>Suppliers :</u></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                {% for i in data1 %}
+                                    <tr>
+                                        <td class="text-center text-decoration-none text-white"><a href="{% url 'purchasevoucheranalysisview' i.id %}">{{ i.name }}</a></td>
+                                        <td>{{ i.qnt }}</td>
+                                        <td>{{ i.brate }}</td>
+                                        <td>{{ i.brate }}</td>
+                                        <td>{{ i.totalvalue }}</td>
+                                    </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><u>Movement Outward</u></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                  <td><u>Buyers :</u></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                              {% for i in data2 %}
+                                    <tr>
+                                        <td class="text-center text-decoration-none text-white" style="color: white; text-decoration:none;"><a href="{% url 'salevoucheranalysisview' i.id %}">{{ i.name }}</a></td>
+                                        <td>{{ i.qnt }}</td>
+                                        <td>{{ i.brate }}</td>
+                                        <td>{{ i.brate }}</td>
+                                        <td>{{ i.totalvalue }}</td>
+                                    </tr>
+                                {% endfor %}
                               </tbody>
                           </table>
                         </div>

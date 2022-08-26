@@ -14,15 +14,29 @@ urlpatterns = [
     path('costcentr',views.costcentr,name='costcentr'),
     path('voucher',views.voucher,name='voucher'),
     path('vouchpage',views.vouchpage,name='vouchpage'),
+
+
     path('liststockviews',views.liststockviews,name='liststockviews'),
     path('liststockgroupviews',views.liststockgroupviews,name='liststockgroupviews'),
-    path('singlestockgroupanalysisview',views.singlestockgroupanalysisview,name='singlestockgroupanalysisview'),
-    path('querystockview',views.querystockview,name='querystockview'),
-    path('salevoucheranalysisview',views.salevoucheranalysisview,name='salevoucheranalysisview'),
-    path('purchasevoucheranalysisview',views.purchasevoucheranalysisview,name='purchasevoucheranalysisview'),
+    # path('singlestockgroupanalysisview',views.singlestockgroupanalysisview,name='singlestockgroupanalysisview'),
+    
+    # path('querystockview',views.querystockview,name='querystockview'),
+
+    # path('salevoucheranalysisview',views.salevoucheranalysisview,name='salevoucheranalysisview'),
+    # path('purchasevoucheranalysisview',views.purchasevoucheranalysisview,name='purchasevoucheranalysisview'),
     path('itemmovementanalysisview',views.itemmovementanalysisview,name='itemmovementanalysisview'),
     path('stockgroupanalysisview',views.stockgroupanalysisview,name='stockgroupanalysisview'),
     path('stockgroupcreateview',views.stockgroupcreateview,name='stockgroupcreateview'),
     path('stockitmecreateview',views.stockitmecreateview,name='stockitmecreateview'),
+
+
+    path('savestockgroup',views.savestockgroup,name='savestockgroup'),
+    path('savestockitem',views.savestockitem,name='savestockitem'),
+
+    path('querystockview/<int:pk>',views.querystockview,name='querystockview'),
+    path('singlestockgroupanalysisview/<int:pk>',views.singlestockgroupanalysisview,name='singlestockgroupanalysisview'),
+    path('purchasevoucheranalysisview/<int:pk>',views.purchasevoucheranalysisview,name='purchasevoucheranalysisview'),
+    path('salevoucheranalysisview/<int:pk>',views.salevoucheranalysisview,name='salevoucheranalysisview'),
+    # path('itemmovementanalysisview/<int:pk>',views.itemmovementanalysisview,name='itemmovementanalysisview'),
     
 ]

@@ -24,17 +24,17 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row ms-1" style="background-color: rgb(103, 175, 220);color:#fff; width: 100%;">
-            <div class="col">Voucher Analysis</div>
+            <div class="col">Item Voucher Analysis</div>
             <!-- <div class="col"><a href="{% url 'base' %}" class="float-end"><button class="btn-close"></button></a></div> -->
           </div>
           <div class="table-responsive">
             <table class="table table-bordered table-sm border-dark" style="background-color: rgba(33,57,77,255);color:#fff;">
               <tr class="border-1">
-                <th colspan="4"  class="border-0">Stock Item : HDD</th>
-                <th colspan="4" class="text-end border-0">For : 1-Apr-2022</th>
+                <th colspan="4"  class="border-0">Stock Item : {{ data.itm.name }}</th>
+                <th colspan="4" class="text-end border-0">For : {{ data.date }}</th>
               </tr>
               <tr class="border-1">
-                <th colspan="4"  class="border-0">Inwards Under : ANN ELEGANT</th>
+                <th colspan="4"  class="border-0">Inwards Under : {{ data.name }}</th>
                 <th colspan="4" class="text-end border-0"  ></th>
               </tr>
                 <tr>
@@ -49,7 +49,7 @@
                 </tr>
               <tbody>
                 <tr>
-                  <td rowspan="3" class="align-middle">1-Apr-2022</td>
+                  <td rowspan="3" class="align-middle">{{ data.date }}</td>
                   <td>Purchase</td>
                   <td></td>
                   <td></td>
@@ -59,22 +59,22 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td>ANN ELEGANT</td>
-                  <td>2Nos</td>
-                  <td>4,000.00/Nos</td>
-                  <td>8,000.00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.qnt }}</td>
+                  <td>{{ data.brate }}</td>
+                  <td>{{ data.bvalue }}</td>
+                  <td>{{ data.addcost }}</td>
+                  <td>{{ data.totalvalue }}</td>
+                  <td>{{ data.totalvalue }}/{{ data.itm.per }}</td>
                 </tr>
                 <tr>
                   <td>Total</td>
-                  <td>2Nos</td>
-                  <td>4,000.00/Nos</td>
-                  <td>8,000.00</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{ data.qnt }}</td>
+                  <td>{{ data.brate }}</td>
+                  <td>{{ data.bvalue }}</td>
+                  <td>{{ data.addcost }}</td>
+                  <td>{{ data.totalvalue }}</td>
+                  <td>{{ data.totalvalue }}</td>
                 </tr>
               </tbody>
             </table>

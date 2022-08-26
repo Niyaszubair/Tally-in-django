@@ -40,24 +40,24 @@
                       <div class="table table-responsive">
                           <table class="table border-dark">
                               <tr>
-                                  <th>Name</th>
-                                  <td>Himalaya Baby Body Lotion 100ML</td>
+                                  <th>Name :</th>
+                                  <td>{{ data.name }}</td>
                               </tr>
                               <tr>
-                                  <th>Group</th>
-                                  <td>HIMALAYA PRODUCTS</td>
+                                  <th>Group :</th>
+                                  <td>{{ data.under.under }}</td>
                               </tr>
                               <tr>
-                                  <th>Closing Balance</th>
-                                  <td>299 BTL</td>
+                                  <th>Closing Balance :</th>
+                                  <td>{{ data.quantity }}{{ data.per }}</td>
                               </tr>
                               <tr>
-                                  <th>Cost Price</th>
-                                  <td>82.14/BTL</td>
+                                  <th>Cost Price :</th>
+                                  <td>{{ data.rate }}/{{ data.per }}</td>
                               </tr>
                               <tr>
-                                  <th>Costing Method</th>
-                                  <td>Avg.Cost</td>
+                                  <th>Costing Method :</th>
+                                  <td>AVG Cost</td>
                               </tr>
                           </table>
                       </div>
@@ -66,24 +66,20 @@
                       <div class="table table-responsive">
                           <table class="table border-dark">
                               <tr>
-                                  <th>Part No.</th>
-                                  <td></td>
+                                  <th>Category :</th>
+                                  <td>Not available</td>
                               </tr>
                               <tr>
-                                  <th>Category</th>
-                                  <td>Noit Applicaple</td>
+                                  <th>Closing Value :</th>
+                                  <td>{{ data.value }}</td>
                               </tr>
                               <tr>
-                                  <th>Closing Value</th>
-                                  <td>25,333.00/BTL</td>
+                                  <th>Standard Selling Price :</th>
+                                  <td>{{ data.rate }}</td>
                               </tr>
                               <tr>
-                                  <th>Standard Selling Price</th>
-                                  <td>200.00/BTL</td>
-                              </tr>
-                              <tr>
-                                  <th>Market Valuation Methon</th>
-                                  <td>82.14/BTL</td>
+                                  <th>Market Valuation Methon :</th>
+                                  <td>AVG . Price</td>
                               </tr>
                           </table>
                       </div>
@@ -109,22 +105,16 @@
                                   <th>Disc%</th>
                                   <th>Amount</th>
                               </tr>
-                              <tr>
-                                 <td>1-Apr-2022</td>
-                                 <td>ANN ELEGANT</td>
-                                 <td>100/BTL</td>
-                                 <td>67</td>
-                                 <td></td>
-                                 <td>6700.00</td>
-                              </tr>
-                              <tr>
-                                  <td>1-Apr-2022</td>
-                                 <td>ANN ELEGANT</td>
-                                 <td>150/BTL</td>
-                                 <td>67</td>
-                                 <td></td>
-                                 <td>10,050.00</td>
-                              </tr>
+                              {% for i in purchase %}
+                                <tr>
+                                    <td>{{ i.date }}</td>
+                                    <td>{{ i.name }}</td>
+                                    <td>{{ i.qnt }}</td>
+                                    <td>{{ i.brate }}</td>
+                                    <td></td>
+                                    <td>{{ i.totalvalue }}</td>
+                                </tr>
+                              {% endfor %}
                           </table>
                       </div>
                   </div>
@@ -147,22 +137,16 @@
                                   <th>Disc%</th>
                                   <th>Amount</th>
                               </tr>
+                              {% for i in sale %}
                               <tr>
-                                 <td>1-Apr-2022</td>
-                                 <td>ANN ELEGANT</td>
-                                 <td>100/BTL</td>
-                                 <td>67</td>
-                                 <td></td>
-                                 <td>6700.00</td>
+                                  <td>{{ i.date }}</td>
+                                  <td>{{ i.name }}</td>
+                                  <td>{{ i.qnt }}</td>
+                                  <td>{{ i.brate }}</td>
+                                  <td></td>
+                                  <td>{{ i.totalvalue }}</td>
                               </tr>
-                              <tr>
-                                  <td>1-Apr-2022</td>
-                                 <td>ANN ELEGANT</td>
-                                 <td>150/BTL</td>
-                                 <td>67</td>
-                                 <td></td>
-                                 <td>10,050.00</td>
-                              </tr>
+                            {% endfor %}
                           </table>
                       </div>
                   </div>
@@ -175,29 +159,23 @@
                                   <th colspan="3" class="text-center">Godown/Batch Details</th>
                               </tr>
                               <tr>
-                                  <th>Part No.</th>
-                                  <th>Part No.</th>
-                                  <th>Part No.</th>
+                                  <th>Godown</th>
+                                  <th>Batch</th>
+                                  <th>Quantity</th>
                               </tr>
-                              <tr>
-                                  <td>G4</td>
-                                  <td>Primary Batch</td>
-                                  <td>199/Btl</td>
-                              </tr>
-                              <tr>    
-                                  <td>Df</td>
-                                  <td>Primary Batch</td>
-                                  <td>100/Btl</td>
-                              </tr>
-                              <tr>    
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                              </tr>
-                              <tr>    
-                                  <td colspan="2" class="text-end">Total</td>
-                                  <td>299/BTL</td>
-                              </tr>
+                              {% for i in ndata %}
+                                <tr>    
+                                    <td>{{ i.name }}</td>
+                                    <td>{{ i.itm.name }}</td>
+                                    <td>{{ i.itm.quantity }}</td>
+                                </tr>
+                              {% endfor %}
+                              <tfoot>
+                                <tr>    
+                                    <td colspan="2" class="text-end">Total</td>
+                                    <td>{{total_sum}}</td>
+                                </tr>
+                              </tfoot>
                           </table>
                       </div>
                   </div>
@@ -213,18 +191,15 @@
                                   <th>Cost</th>
                                   <th>Sale Price</th>
                               </tr>
-                              <tr>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                              </tr>
-                              <tr>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                              </tr>
+                              {% for i in cat %}
+                                <tr>
+                                    <th>{{ i.name }}</th>
+                                    <th id="demo1">{{ i.qnt }}</th>
+                                    <th id="demo2">{{ i.cost }}</th>
+                                    <!-- <th>{{ i.saleprice }}</th> -->
+                                    <th id="demo3"></th>
+                                </tr>
+                              {% endfor %}
                           </table>
                       </div>
                   </div>
@@ -232,6 +207,12 @@
           </div>
       </div>
   </div>
+  <script>
+    let x = document.getElementById("demo2").innerHTML;
+    let y = document.getElementById("demo1").innerHTML
+    let z = x / y;
+    document.getElementById("demo3").innerHTML = z;
+    </script>
 {% endblock %}
 
  
